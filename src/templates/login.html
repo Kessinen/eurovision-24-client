@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row container-fluid align-items-center justify-content-center mt-5 ">
+    <div class="col-4 login_form mx-auto border border-2 p-5 rounded">
+    <h1 class="text-center mb-5">Kirjaudu</h1>
+    <form method="post" action="{{ url_for('login') }}" class="">
+        <div class="row">{{ form.username.label(class="form-label") }} {{ form.username(class="form-control") }}</div>
+        <div class="row">{{ form.pin.label(class="form-label") }} {{ form.pin(class="form-control") }}</div>
+        <div class="row">{{ form.submit(class="btn btn-secondary mt-5") }}</div>
+    </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="display-3 text-center mb-5">Esiintyjät:</h1>
+{% for participant in participants %}
+<a>
+    <div class="participant m-3 p-3 rounded-5 border border-2 shadow-lg mb-5 row justify-content-between align-items-center">
+        <div class="col-1 text-center display-6 px-2">
+            <div>{{ participant.turn }}</div>
+        </div>
+        <div class="col">
+            <p class="lead">{{ participant.country }}</p>
+            <p>{{ participant.name|title }}<br>
+            {{ participant.song|title }}</p>
+        </div>
+        <div class="col-2 text-center display-6 px-1">
+            0.0
+        </div>
+    </div>
+</a>
+{% endfor %}
+{% endblock %}
