@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  eurovision-24-client:
+    build: .
+    command: python -m flask run --host=0.0.0.0 --port=8000
+    ports:
+      - "8088:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - API_URL=http://localhost:8000
+      - SECRET_KEY=secret_key
