@@ -1,0 +1,193 @@
+{
+    "1": {
+        "inputs": {
+            "seed": 1021876799692042,
+            "steps": 20,
+            "cfg": 7.0,
+            "sampler_name": "dpmpp_2m",
+            "scheduler": "karras",
+            "denoise": 1.0,
+            "preview_method": "auto",
+            "vae_decode": "true",
+            "model": [
+                "2",
+                0
+            ],
+            "positive": [
+                "3",
+                0
+            ],
+            "negative": [
+                "5",
+                0
+            ],
+            "latent_image": [
+                "6",
+                0
+            ],
+            "optional_vae": [
+                "2",
+                2
+            ]
+        },
+        "class_type": "KSampler (Efficient)"
+    },
+    "2": {
+        "inputs": {
+            "ckpt_name": "sd15/aZovyaRPGArtistTools_v3.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple"
+    },
+    "3": {
+        "inputs": {
+            "text": "favicon for eurovision song contest, simple, minimalistic, music",
+            "clip": [
+                "2",
+                1
+            ]
+        },
+        "class_type": "CLIPTextEncode"
+    },
+    "5": {
+        "inputs": {
+            "text": "text",
+            "clip": [
+                "2",
+                1
+            ]
+        },
+        "class_type": "CLIPTextEncode"
+    },
+    "6": {
+        "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage"
+    },
+    "7": {
+        "inputs": {
+            "images": [
+                "1",
+                5
+            ]
+        },
+        "class_type": "PreviewImage"
+    },
+    "8": {
+        "inputs": {
+            "upscale_by": 2,
+            "seed": 777,
+            "steps": 18,
+            "cfg": 8,
+            "sampler_name": "dpmpp_2m",
+            "scheduler": "karras",
+            "denoise": 0.2,
+            "mode_type": "Linear",
+            "tile_width": 512,
+            "tile_height": 512,
+            "mask_blur": 8,
+            "tile_padding": 32,
+            "seam_fix_mode": "None",
+            "seam_fix_denoise": 1,
+            "seam_fix_width": 64,
+            "seam_fix_mask_blur": 8,
+            "seam_fix_padding": 16,
+            "force_uniform_tiles": true,
+            "tiled_decode": false,
+            "image": [
+                "1",
+                5
+            ],
+            "model": [
+                "9",
+                0
+            ],
+            "positive": [
+                "13",
+                0
+            ],
+            "negative": [
+                "14",
+                0
+            ],
+            "vae": [
+                "9",
+                2
+            ],
+            "upscale_model": [
+                "10",
+                0
+            ]
+        },
+        "class_type": "UltimateSDUpscale"
+    },
+    "9": {
+        "inputs": {
+            "ckpt_name": "sdxl/juggernautXL_version6Rundiffusion.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple"
+    },
+    "10": {
+        "inputs": {
+            "model_name": "4x_foolhardy_Remacri.pth"
+        },
+        "class_type": "UpscaleModelLoader"
+    },
+    "12": {
+        "inputs": {
+            "image_a": [
+                "1",
+                5
+            ],
+            "image_b": [
+                "8",
+                0
+            ]
+        },
+        "class_type": "Image Comparer (rgthree)"
+    },
+    "13": {
+        "inputs": {
+            "text": "favicon for eurovision song contest, simple, minimalistic, music",
+            "clip": [
+                "9",
+                1
+            ]
+        },
+        "class_type": "CLIPTextEncode"
+    },
+    "14": {
+        "inputs": {
+            "text": "text",
+            "clip": [
+                "9",
+                1
+            ]
+        },
+        "class_type": "CLIPTextEncode"
+    },
+    "15": {
+        "inputs": {
+            "width": 256,
+            "height": 256,
+            "x": 128,
+            "y": 120,
+            "image": [
+                "1",
+                5
+            ]
+        },
+        "class_type": "ImageCrop"
+    },
+    "16": {
+        "inputs": {
+            "images": [
+                "15",
+                0
+            ]
+        },
+        "class_type": "PreviewImage"
+    }
+}
